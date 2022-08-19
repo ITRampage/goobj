@@ -32,8 +32,26 @@ BenchmarkCInc-8                 10  105194498 ns/op
 BenchmarkCIncLockAll-8         534    2244140 ns/op
 PASS
 ok   github.com/ITRampage/goobj/inc 6.715s
+```
 
 ```
+% go version
+go version go1.19 darwin/amd64
+
+% go test -bench=.
+goos: darwin
+goarch: amd64
+pkg: github.com/ITRampage/goobj/inc
+cpu: Intel(R) Core(TM) i7-4770HQ CPU @ 2.20GHz
+BenchmarkObj-8                   2  516128624 ns/op
+BenchmarkInc-8                3894     299109 ns/op
+BenchmarkCIncNoLock-8         1357     880860 ns/op
+BenchmarkCInc-8                 10  105867995 ns/op
+BenchmarkCIncLockAll-8         520    2288599 ns/op
+PASS
+ok   github.com/ITRampage/goobj/inc 6.752s
+```
+
 ```
 % go version
 go version go1.17.3 darwin/amd64
@@ -51,6 +69,7 @@ BenchmarkCIncLockAll-12          757    1527242 ns/op
 PASS
 ok   github.com/ITRampage/goobj/inc 8.182s
 ```
+
 ```
 % go version
 go version go1.19 darwin/amd64
