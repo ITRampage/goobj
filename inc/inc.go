@@ -10,7 +10,7 @@ const (
 	_ mKind = iota
 	incMsg
 	printMsg
-	desctructMsg
+	destructMsg
 )
 
 type Obj struct {
@@ -25,7 +25,7 @@ func receive(obj *Obj) {
 			obj.counter++
 		case printMsg:
 			fmt.Printf("\n\t\tcounter: %d\n", obj.counter)
-		case desctructMsg:
+		case destructMsg:
 			fmt.Printf("\n\tfinal counter: %d\n\n", obj.counter)
 			return
 		}
@@ -47,5 +47,5 @@ func (o *Obj) Print() {
 	o.messages <- printMsg
 }
 func (o *Obj) Descruct() {
-	o.messages <- desctructMsg
+	o.messages <- destructMsg
 }
